@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "Inter", sans-serif;
+  background-color: #f5f7fbfe;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+h1,
+h2 {
+  font-family: "Karla", sans-serif;
+}
+/* ------------ */
+.app-main {
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.add-button {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+/* ------------ */
+.cards-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.website-name {
+  font-family: "Karla", sans-serif;
+}
+/* ------------ */
+.addm-button-container {
+  display: flex;
+  gap: 5px;
+  margin-top: 30px;
+}
+
+.addm-button {
+  font-family: "Inter", sans-serif;
+}
+
+.modal-title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.mantine-TextInput-label {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.mantine-PasswordInput-label {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.input-margin {
+  margin-bottom: 15px;
+}
