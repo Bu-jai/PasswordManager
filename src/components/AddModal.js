@@ -1,12 +1,20 @@
 import React from "react";
 import { nanoid } from "nanoid";
-import { Modal, Button, TextInput, PasswordInput } from "@mantine/core";
+import { TbCopy, TbCheck, TbRotate } from "react-icons/tb";
+import {
+  Modal,
+  Button,
+  TextInput,
+  PasswordInput,
+  CopyButton,
+  Tooltip,
+  ActionIcon,
+} from "@mantine/core";
 
 export default function AddModal(props) {
   const [website, setWebsite] = React.useState("");
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
-  console.log(website, name, password);
 
   React.useEffect(() => {
     setWebsite("");
@@ -37,27 +45,66 @@ export default function AddModal(props) {
       <h1 className="modal-title">Add Item</h1>
       <hr />
       <form onSubmit={addItem}>
-        <TextInput
-          className="input-margin"
-          label="Website"
-          required
-          value={website}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-        <TextInput
-          className="input-margin"
-          label="Username"
-          required
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <PasswordInput
-          className="input-margin"
-          label="Password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="input-container">
+          <TextInput
+            className="input-margin"
+            label="Website"
+            required
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+          <CopyButton value={website}>
+            {({ copied, copy }) => (
+              <ActionIcon
+                color={copied ? "teal" : "gray"}
+                onClick={copy}
+                className="copyicon"
+              >
+                {copied ? <TbCheck size={16} /> : <TbCopy size={16} />}
+              </ActionIcon>
+            )}
+          </CopyButton>
+        </div>
+        <div className="input-container">
+          <TextInput
+            className="input-margin"
+            label="Username"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <CopyButton value={name}>
+            {({ copied, copy }) => (
+              <ActionIcon
+                color={copied ? "teal" : "gray"}
+                onClick={copy}
+                className="copyicon"
+              >
+                {copied ? <TbCheck size={16} /> : <TbCopy size={16} />}
+              </ActionIcon>
+            )}
+          </CopyButton>
+        </div>
+        <div className="input-container">
+          <PasswordInput
+            className="input-margin"
+            label="Password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <CopyButton value={password}>
+            {({ copied, copy }) => (
+              <ActionIcon
+                color={copied ? "teal" : "gray"}
+                onClick={copy}
+                className="copyicon"
+              >
+                {copied ? <TbCheck size={16} /> : <TbCopy size={16} />}
+              </ActionIcon>
+            )}
+          </CopyButton>
+        </div>
         <div className="addm-button-container">
           <Button className="addm-button" radius="lg" type="submit">
             Save
