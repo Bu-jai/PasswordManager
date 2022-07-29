@@ -6,6 +6,13 @@ export default function AddModal(props) {
   const [website, setWebsite] = React.useState("");
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
+  console.log(website, name, password);
+
+  React.useEffect(() => {
+    setWebsite("");
+    setName("");
+    setPassword("");
+  }, [props.addOpened]);
 
   function closeModal() {
     props.setAddOpened(false);
