@@ -1,7 +1,6 @@
 import React from "react";
 import Item from "./components/Item";
 import AddModal from "./components/AddModal";
-// import { nanoid } from "nanoid";
 import { Button, SimpleGrid, Modal, Group } from "@mantine/core";
 
 export default function App() {
@@ -12,6 +11,8 @@ export default function App() {
   function addModal() {
     setAddOpened(true);
   }
+
+  const itemElements = items.map((item) => <Item key={item.id} item={item} />);
 
   return (
     <div className="app">
@@ -37,12 +38,12 @@ export default function App() {
         className="cards-container"
         cols={3}
         spacing="xl"
-        breakpoints={[{ maxWidth: 950, cols: 1, spacing: "sm" }]}
+        breakpoints={[
+          { maxWidth: 950, cols: 2, spacing: "sm" },
+          { maxWidth: 550, cols: 1, spacing: "sm" },
+        ]}
       >
-        {/* <Item />
-        <Item />
-        <Item />
-        <Item /> */}
+        {itemElements}
       </SimpleGrid>
     </div>
   );
