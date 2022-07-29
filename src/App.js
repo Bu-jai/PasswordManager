@@ -7,7 +7,7 @@ import { Button, SimpleGrid, Modal, Group } from "@mantine/core";
 export default function App() {
   const [items, setItems] = React.useState([]);
   const [addOpened, setAddOpened] = React.useState(false);
-  // console.log(items);
+  console.log(items);
 
   function addModal() {
     setAddOpened(true);
@@ -27,7 +27,12 @@ export default function App() {
           Add Item
         </Button>
       </div>
-      <AddModal addOpened={addOpened} setAddOpened={setAddOpened} />
+      <AddModal
+        addOpened={addOpened}
+        setAddOpened={setAddOpened}
+        items={items}
+        setItems={setItems}
+      />
       <SimpleGrid
         className="cards-container"
         cols={3}
