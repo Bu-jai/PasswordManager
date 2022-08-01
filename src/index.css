@@ -4,7 +4,7 @@
 
 body {
   margin: 0px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #f5f7fbfe;
   margin-left: 20%;
   margin-right: 20%;
@@ -12,9 +12,9 @@ body {
 
 h1,
 h2 {
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
 }
-/* ------------ */
+/* Home Screen------------ */
 .app-main {
   text-align: center;
 }
@@ -24,26 +24,27 @@ h2 {
 }
 
 .add-button {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
 }
-/* ------------ */
+/* Item Cards------------ */
 .cards-container {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 .website-name {
-  font-family: "Karla", sans-serif;
+  font-family: 'Karla', sans-serif;
 }
-/* ------------ */
-.addm-button-container {
+/* Modal------------ */
+.modal-input-container {
   display: flex;
+  align-items: center;
   gap: 5px;
-  margin-top: 30px;
 }
 
-.addm-button {
-  font-family: "Inter", sans-serif;
+.modal-input-container .mantine-InputWrapper-root {
+  margin-bottom: 15px;
+  flex: 1;
 }
 
 .modal-title {
@@ -55,17 +56,31 @@ h2 {
 }
 
 .mantine-TextInput-label {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: 1rem;
 }
 
 .mantine-PasswordInput-label {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: 1rem;
 }
+/* Add Modal------------ */
+.addm-button-container {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
 
-.input-margin {
-  margin-bottom: 15px;
+.addm-button {
+  font-family: 'Inter', sans-serif;
+}
+
+.copyicon {
+  margin-top: 8px;
+}
+
+.generateicon {
+  margin-top: 8px;
 }

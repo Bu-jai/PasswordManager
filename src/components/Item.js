@@ -1,4 +1,4 @@
-import { Card, Title } from "@mantine/core";
+import { Card, Title } from '@mantine/core'
 
 export default function Item(props) {
   return (
@@ -7,5 +7,5 @@ export default function Item(props) {
         {props.item.website}
       </Title>
     </Card>
-  );
+  )
 }
