@@ -73,11 +73,11 @@ export default function AddModal(props) {
             <TbRotate />
           </ActionIcon>
         </div>
-        <div className="addm-button-container">
-          <Button className="addm-button" radius="lg" type="submit">
+        <div className="modal-button-container">
+          <Button className="modal-button" radius="lg" type="submit">
             Save
           </Button>
-          <Button className="addm-button" radius="lg" onClick={closeModal}>
+          <Button className="modal-button" radius="lg" onClick={closeModal}>
             Cancel
           </Button>
         </div>

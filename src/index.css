@@ -28,6 +28,10 @@ h2 {
   font-size: 1rem;
 }
 /* Item Cards------------ */
+.card {
+  cursor: pointer;
+}
+
 .cards-container {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -66,15 +70,19 @@ h2 {
   font-weight: bold;
   font-size: 1rem;
 }
-/* Add Modal------------ */
-.addm-button-container {
+
+.modal-button-container {
   display: flex;
   gap: 5px;
   margin-top: 10px;
 }
 
-.addm-button {
+.modal-button {
   font-family: 'Inter', sans-serif;
+}
+
+.modal-delete-button {
+  margin-left: auto;
 }
 
 .copyicon {

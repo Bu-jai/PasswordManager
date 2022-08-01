@@ -6,13 +6,18 @@ import { Button, SimpleGrid } from '@mantine/core'
 export default function App() {
   const [items, setItems] = React.useState([])
   const [addOpened, setAddOpened] = React.useState(false)
-  console.log(items)
 
   function addModal() {
     setAddOpened(true)
   }
 
-  const itemElements = items.map((item) => <Item key={item.id} item={item} />)
+  function findItem(id) {
+    return items.find((item) => item.id === id)
+  }
+
+  const itemElements = items.map((item) => (
+    <Item key={item.id} id={item.id} item={item} findItem={findItem} setItems={setItems} />
+  ))
 
   return (
     <div className="app">
