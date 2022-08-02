@@ -82,13 +82,14 @@ h2 {
 }
 
 .modal-delete-button {
+  font-family: 'Inter', sans-serif;
   margin-left: auto;
 }
 
 .copyicon {
-  margin-top: 8px;
+  margin-top: 9px;
 }
 
 .generateicon {
-  margin-top: 8px;
+  margin-top: 9px;
 }
