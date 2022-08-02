@@ -5,7 +5,7 @@ import PassSettingsModal from './components/PassSettingsModal'
 import { Button, SimpleGrid } from '@mantine/core'
 
 export default function App() {
-  const [items, setItems] = React.useState([])
+  const [items, setItems] = React.useState(JSON.parse(localStorage.getItem('items')) || [])
   const [addOpened, setAddOpened] = React.useState(false)
   const [passSetOpened, setPassSetOpened] = React.useState(false)
   // Password Settings-----------
@@ -14,7 +14,11 @@ export default function App() {
   const [numbers, setNumbers] = React.useState(false)
   const [symbols, setSymbols] = React.useState(false)
 
-  console.log(length, capitalLetters, numbers, symbols)
+  // console.log(length, capitalLetters, numbers, symbols)
+
+  React.useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items))
+  }, [items])
 
   function addModal() {
     setAddOpened(true)
