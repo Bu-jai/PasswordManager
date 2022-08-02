@@ -1,4 +1,5 @@
 import React from 'react'
+import usePassGenerate from '../usePassGenerate'
 import { nanoid } from 'nanoid'
 import { TbCopy, TbCheck, TbRotate } from 'react-icons/tb'
 import { Modal, Button, TextInput, PasswordInput, CopyButton, ActionIcon } from '@mantine/core'
@@ -7,6 +8,7 @@ export default function AddModal(props) {
   const [website, setWebsite] = React.useState('')
   const [name, setName] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const generatedPassword = usePassGenerate(props.length, props.capitalLetters, props.numbers, props.symbols)
 
   React.useEffect(() => {
     setWebsite('')
@@ -26,13 +28,7 @@ export default function AddModal(props) {
   }
 
   function generatePassword() {
-    let length = 16,
-      charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
-      password = ''
-    for (let i = 0, n = charset.length; i < length; ++i) {
-      password += charset.charAt(Math.floor(Math.random() * n))
-    }
-    setPassword(password)
+    setPassword(generatedPassword)
   }
 
   return (

@@ -20,6 +20,10 @@ export default function Item(props) {
         name={name}
         password={password}
         setItems={props.setItems}
+        length={props.length}
+        capitalLetters={props.capitalLetters}
+        numbers={props.numbers}
+        symbols={props.symbols}
       />
       <Card className="card" shadow="sm" p="lg" radius="md" withBorder onClick={editModal}>
         <Title className="website-name" order={4} align="center">
