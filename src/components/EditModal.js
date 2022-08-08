@@ -7,7 +7,12 @@ export default function EditModal(props) {
   const [website, setWebsite] = React.useState(props.website)
   const [name, setName] = React.useState(props.name)
   const [password, setPassword] = React.useState(props.password)
-  const generatedPassword = usePassGenerate(props.length, props.capitalLetters, props.numbers, props.symbols)
+  const generatedPassword = usePassGenerate(
+    props.length,
+    props.settings.capitalLetters,
+    props.settings.numbers,
+    props.settings.symbols,
+  )
 
   React.useEffect(() => {
     setWebsite(props.website)

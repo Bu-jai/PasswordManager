@@ -5,14 +5,18 @@ import PassSettingsModal from './components/PassSettingsModal'
 import { Button, SimpleGrid } from '@mantine/core'
 
 export default function App() {
-  const [items, setItems] = React.useState(JSON.parse(localStorage.getItem('items')) || [])
+  const initialState = JSON.parse(localStorage.getItem('items')) || []
+  const [items, setItems] = React.useState(initialState)
+
   const [addOpened, setAddOpened] = React.useState(false)
   const [passSetOpened, setPassSetOpened] = React.useState(false)
   // Password Settings-----------
-  const [length, setLength] = React.useState(15)
-  const [capitalLetters, setCapitalLetters] = React.useState(false)
-  const [numbers, setNumbers] = React.useState(false)
-  const [symbols, setSymbols] = React.useState(false)
+  // const [length, setLength] = React.useState(15)
+  // const [capitalLetters, setCapitalLetters] = React.useState(false)
+  // const [numbers, setNumbers] = React.useState(false)
+  // const [symbols, setSymbols] = React.useState(false)
+
+  const [settings, setSettings] = React.useState({ numbers: false, symbols: false, capitalLetters: false, length: 15 })
 
   // console.log(length, capitalLetters, numbers, symbols)
 
@@ -33,17 +37,7 @@ export default function App() {
   }
 
   const itemElements = items.map((item) => (
-    <Item
-      key={item.id}
-      id={item.id}
-      item={item}
-      findItem={findItem}
-      setItems={setItems}
-      length={length}
-      capitalLetters={capitalLetters}
-      numbers={numbers}
-      symbols={symbols}
-    />
+    <Item key={item.id} id={item.id} item={item} findItem={findItem} setItems={setItems} settings={settings} />
   ))
 
   return (
@@ -64,22 +58,13 @@ export default function App() {
         setAddOpened={setAddOpened}
         items={items}
         setItems={setItems}
-        length={length}
-        capitalLetters={capitalLetters}
-        numbers={numbers}
-        symbols={symbols}
+        settings={settings}
       />
       <PassSettingsModal
         passSetOpened={passSetOpened}
         setPassSetOpened={setPassSetOpened}
-        length={length}
-        setLength={setLength}
-        capitalLetters={capitalLetters}
-        setCapitalLetters={setCapitalLetters}
-        numbers={numbers}
-        setNumbers={setNumbers}
-        symbols={symbols}
-        setSymbols={setSymbols}
+        settings={settings}
+        setSettings={setSettings}
       />
       <SimpleGrid
         className="cards-container"

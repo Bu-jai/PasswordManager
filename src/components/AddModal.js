@@ -8,7 +8,12 @@ export default function AddModal(props) {
   const [website, setWebsite] = React.useState('')
   const [name, setName] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const generatedPassword = usePassGenerate(props.length, props.capitalLetters, props.numbers, props.symbols)
+  const generatedPassword = usePassGenerate(
+    props.settings.length,
+    props.settings.capitalLetters,
+    props.settings.numbers,
+    props.settings.symbols,
+  )
 
   React.useEffect(() => {
     setWebsite('')
